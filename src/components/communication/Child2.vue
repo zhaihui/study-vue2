@@ -4,14 +4,17 @@
     <h3 v-on="$listeners">child2</h3>
     <button @click='sendToChild1'>send msg</button>
     <p>{{$attrs.msg}}</p>
+    <h5>{{bar}}</h5>
   </div>
 </template>
 <script>
   export default {
+    // inject: ['foo'],
+    inject: {
+      bar: { from: 'foo'} // 防止命名重复
+    },
     mounted() {
       console.log('-----', this.$listeners)
-
-      
     },
     methods: {
       sendToChild1() {

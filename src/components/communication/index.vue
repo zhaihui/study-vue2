@@ -9,6 +9,13 @@
   import Child1 from './Child1.vue'
   import Child2 from './Child2.vue'
   export default {
+    provide() {
+      // 实际开发不怎么用，一般ui组件库用到
+      // 可以跨层级， 在更高层级的组件中
+      return {
+        foo: 'hahahahahahahahahahahahaha'
+      }
+    },
     components: {
       Child1,
       Child2

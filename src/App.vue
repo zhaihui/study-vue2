@@ -2,18 +2,21 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Communication />
+    <!-- <Communication /> -->
+    <Slots />
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
-import Communication from './components/communication'
+// import Communication from './components/communication'
+import Slots from './components/slots'
 export default {
   name: 'App',
   components: {
     // HelloWorld,
-    Communication
+    // Communication,
+    Slots
   }
 }
 </script>
