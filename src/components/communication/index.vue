@@ -1,7 +1,8 @@
 <template>
   <div>
     <Child1 msg="some msg from parent" @some-event="onSomeEvent"/>
-    <Child2 />
+    <Child2 msg="some msg from parent" @click='onClick' />
+    <button @click='goHome'>回家吃饭</button>
   </div>
 </template>
 <script>
@@ -12,12 +13,18 @@
       Child1,
       Child2
     },
-    data() {
-      
-    },
     methods: {
-      onSomeEvent(){
-        
+      onSomeEvent(msg){
+        console.log('Communition: ', msg)
+      },
+      goHome(){
+        //直接访问 第一个子组件的eat方法
+        // console.log(this.$children)
+        this.$children[0].eat()
+        this.$children[1].eat()
+      },
+      onClick() {
+        console.log('来自父组件的回调函数处理', this)
       }
     },
   }
